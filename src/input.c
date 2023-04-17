@@ -6,7 +6,7 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:00:00 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/04/17 13:13:35 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/04/17 13:23:35 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ static t_list	*ft_get_num(t_list **stack_a, char **numbers, int i)
 	return (tmp);
 }
 
+// reads the input and appends it to the stack
 t_bool	ft_read_input(t_list **stack_a, char **numbers, int i)
 {
 	long int	num;

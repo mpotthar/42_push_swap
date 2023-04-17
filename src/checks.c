@@ -6,12 +6,13 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:00:00 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/04/17 13:14:31 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/04/17 13:22:40 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// checks if the string is a number
 t_bool	ft_check_char_occurrence(const char *str)
 {
 	int	i;
@@ -28,6 +29,7 @@ t_bool	ft_check_char_occurrence(const char *str)
 	return (true);
 }
 
+// checks if the number is already in the stack
 t_bool	ft_check_double_occurrence(t_list *stack_a, int num)
 {
 	while (stack_a)
@@ -39,6 +41,7 @@ t_bool	ft_check_double_occurrence(t_list *stack_a, int num)
 	return (true);
 }
 
+// checks if the stack is already sorted in ascending order
 t_bool	ft_check_ascending_order(t_list *stack)
 {
 	if (!stack)

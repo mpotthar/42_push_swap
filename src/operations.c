@@ -6,12 +6,13 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:00:00 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/04/17 13:10:36 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/04/17 13:27:30 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// swap stack a or b (sa, sb)
 void	ft_swap(char *operation, t_list **stack)
 {
 	t_list	*first;
@@ -25,6 +26,7 @@ void	ft_swap(char *operation, t_list **stack)
 	ft_printf("%s\n", operation);
 }
 
+// push stack b to stack a (pa)
 void	ft_push_a(t_list **stack_a, t_list **stack_b, t_vars *vars)
 {
 	t_list	*first;
@@ -41,6 +43,7 @@ void	ft_push_a(t_list **stack_a, t_list **stack_b, t_vars *vars)
 	ft_printf("pa\n");
 }
 
+// push stack a to stack b (pb)
 void	ft_push_b(t_list **stack_a, t_list **stack_b, t_vars *vars)
 {
 	t_list	*first;
@@ -57,6 +60,7 @@ void	ft_push_b(t_list **stack_a, t_list **stack_b, t_vars *vars)
 	ft_printf("pb\n");
 }
 
+// rotate stack a or b (ra, rb)
 void	ft_rotate(char *operation, t_list **stack)
 {
 	t_list	*first;
@@ -70,6 +74,7 @@ void	ft_rotate(char *operation, t_list **stack)
 	ft_printf("%s\n", operation);
 }
 
+// rotate stack a or b (rra, rrb)
 void	ft_reverse_rotate(char *operation, t_list **stack)
 {
 	t_list	*first;

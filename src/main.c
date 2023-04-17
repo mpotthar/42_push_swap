@@ -6,18 +6,21 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:00:00 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/04/17 13:12:34 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/04/17 13:29:38 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// writes error message to stderr
 static int	ft_error(void)
 {
 	write(2, "Error\n", 6);
 	return (1);
 }
 
+// read and checks already done, this function
+// calls sorting functions, the heart of the program
 static void	ft_push_swap(t_list **stack_a, t_list **stack_b, t_vars *vars)
 {
 	vars->len_a = ft_lstsize(*stack_a);
@@ -33,6 +36,7 @@ static void	ft_push_swap(t_list **stack_a, t_list **stack_b, t_vars *vars)
 	free(vars);
 }
 
+// main function
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
