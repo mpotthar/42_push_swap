@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   backward.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpotthar <mpotthar@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:00:00 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/04/16 00:00:00 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/04/17 13:15:55 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_sort_backward(t_list **stack_a, t_list **stack_b, t_vars *vars)
 		cnt++;
 		tmp_a = tmp_a->next;
 	}
-	ft_pa(stack_a, stack_b, vars);
+	ft_push_a(stack_a, stack_b, vars);
 }
 
 void	ft_oder_last_three_spots(t_list **stack_a, t_vars *vars)
