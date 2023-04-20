@@ -6,7 +6,7 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:00:00 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/04/17 13:14:04 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/04/20 15:28:05 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,5 +106,5 @@ void	ft_sort_forward(t_list **stack_a, t_list **stack_b, t_vars *vars)
 		if ((*stack_a)->num > (*stack_a)->next->num)
 			ft_swap("sa", stack_a);
 	if (vars->len_a == 3)
-		ft_oder_last_three_spots(stack_a, vars);
+		ft_order_last_three_spots(stack_a, vars);
 }

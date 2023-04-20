@@ -6,7 +6,7 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:00:00 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/04/20 14:27:36 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/04/20 15:27:17 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ t_bool	ft_split_input(char *string_numbers, t_list **stack_a)
 	char	**numbers;
 	t_bool	result;
 
-	if (string_numbers[0] == '\0')
-		return (false);
 	numbers = ft_split(string_numbers, ' ');
 	if (!numbers)
 		return (false);

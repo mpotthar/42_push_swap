@@ -6,12 +6,13 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:00:00 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/04/17 13:23:05 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/04/20 15:25:22 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// last step: rotate the stack to the minimum number
 void	ft_order_ascending(t_list **stack_a, t_vars *vars)
 {
 	int		cnt;
@@ -35,6 +36,7 @@ void	ft_order_ascending(t_list **stack_a, t_vars *vars)
 			ft_reverse_rotate("rra", stack_a);
 }
 
+// rotate stack_a (shortest) and push from b to a
 void	ft_sort_backward(t_list **stack_a, t_list **stack_b, t_vars *vars)
 {
 	int		cnt;
@@ -63,7 +65,8 @@ void	ft_sort_backward(t_list **stack_a, t_list **stack_b, t_vars *vars)
 	ft_push_a(stack_a, stack_b, vars);
 }
 
-void	ft_oder_last_three_spots(t_list **stack_a, t_vars *vars)
+// sort last three numbers in stack_a
+void	ft_order_last_three_spots(t_list **stack_a, t_vars *vars)
 {
 	t_bool	valid;
 
