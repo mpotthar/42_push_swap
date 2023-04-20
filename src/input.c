@@ -6,7 +6,7 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:00:00 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/04/17 13:23:35 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/04/20 14:27:36 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,15 @@ t_bool	ft_split_input(char *string_numbers, t_list **stack_a)
 	return (result);
 }
 
+static t_bool	ft_num_is_valid(char *number)
+{
+	if ((number[0] == '0')
+		|| (number[0] == '-' && number[1] == '0')
+		|| (number[0] == '+' && number[1] == '0'))
+		return (true);
+	return (false);
+}
+
 static t_list	*ft_get_num(t_list **stack_a, char **numbers, int i)
 {
 	long int	num;
@@ -40,7 +49,7 @@ static t_list	*ft_get_num(t_list **stack_a, char **numbers, int i)
 	if (ft_check_char_occurrence(numbers[i]) == false)
 		return (NULL);
 	num = ft_atol(numbers[i]);
-	if ((num == 0 && numbers[i][0] != '0')
+	if ((num == 0 && ft_num_is_valid(numbers[i]) == false)
 		|| (num < INT_MIN || num > INT_MAX)
 		|| ft_check_double_occurrence(*stack_a, (int) num) == false)
 		return (NULL);
@@ -62,7 +71,8 @@ t_bool	ft_read_input(t_list **stack_a, char **numbers, int i)
 	if (ft_check_char_occurrence(numbers[i]) == false)
 		return (false);
 	num = ft_atol(numbers[i]);
-	if ((num == 0 && numbers[i][0] != '0') || (num < INT_MIN || num > INT_MAX))
+	if ((num == 0 && ft_num_is_valid(numbers[i]) == false)
+		|| (num < INT_MIN || num > INT_MAX))
 		return (false);
 	*stack_a = ft_lstnew((int)num);
 	if (!(*stack_a))

@@ -6,7 +6,7 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:00:00 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/04/17 13:22:40 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/04/20 13:31:53 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ t_bool	ft_check_double_occurrence(t_list *stack_a, int num)
 // checks if the stack is already sorted in ascending order
 t_bool	ft_check_ascending_order(t_list *stack)
 {
-	if (!stack)
-		return (false);
 	while (stack->next)
 	{
 		if (stack->num > stack->next->num)
