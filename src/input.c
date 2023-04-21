@@ -6,17 +6,20 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:00:00 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/04/20 15:27:17 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/04/21 09:22:30 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// splits the input string into an array of strings
 t_bool	ft_split_input(char *string_numbers, t_list **stack_a)
 {
 	char	**numbers;
 	t_bool	result;
 
+	if (string_numbers[0] == '\0')
+		return (false);
 	numbers = ft_split(string_numbers, ' ');
 	if (!numbers)
 		return (false);
@@ -30,6 +33,7 @@ t_bool	ft_split_input(char *string_numbers, t_list **stack_a)
 	return (result);
 }
 
+// for checking validity of 0, +0, -0 
 static t_bool	ft_num_is_valid(char *number)
 {
 	if ((number[0] == '0')
@@ -39,6 +43,9 @@ static t_bool	ft_num_is_valid(char *number)
 	return (false);
 }
 
+// creates a new node with the converted (long int) number.
+// checks for validity of the number (range + "0-Problem") 
+// and double occurrence
 static t_list	*ft_get_num(t_list **stack_a, char **numbers, int i)
 {
 	long int	num;

@@ -6,12 +6,20 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:00:00 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/04/20 15:28:05 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/04/21 09:14:26 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// sorting algorithm for forward order (stack a to stack b)
+// ----------------------------------------------------------------------------
+// check first spot in stack a
+// if spot is new max and max of stack_b is on top -> push
+// if spot is bigger than first spot in b and smaller than last spot in b->push
+// if spot is new min and max of stack_b is on top -> push b and rotate b
+// if spot is smaller than first spot in b and bigger than second spot in b 
+// -> push and swap b
 static t_bool	ft_fst_spot(t_list **stack_a, t_list **stack_b, t_vars *vars)
 {
 	int	spot;
@@ -35,6 +43,10 @@ static t_bool	ft_fst_spot(t_list **stack_a, t_list **stack_b, t_vars *vars)
 	return (true);
 }
 
+// check second spot in stack a
+// if 2nd spot is new max and max of stack_b is on top -> swap a
+// if 2nd spot is bigger than first spot in b and smaller than last spot in b
+// -> swap a
 static t_bool	ft_snd_spot(t_list **stack_a, t_list **stack_b, t_vars *vars)
 {
 	int	spot;
@@ -48,6 +60,10 @@ static t_bool	ft_snd_spot(t_list **stack_a, t_list **stack_b, t_vars *vars)
 	return (true);
 }
 
+// check last spot in stack a
+// if last spot is new max and max of stack_b is on top -> reverse rotate a
+// if last spot is bigger than first spot in b and smaller than last spot in b
+// -> reverse rotate a
 static t_bool	ft_last_spot(t_list **stack_a, t_list **stack_b, t_vars *vars)
 {
 	int	spot;
@@ -61,6 +77,8 @@ static t_bool	ft_last_spot(t_list **stack_a, t_list **stack_b, t_vars *vars)
 	return (true);
 }
 
+// check for "cheapest spot" with fewest operations in stack a and b and
+// rotate a and b to that spot
 static void	ft_diff_spot(t_list **stack_a, t_list **stack_b, t_vars *vars)
 {
 	t_list	*tmp_a;
@@ -86,6 +104,8 @@ static void	ft_diff_spot(t_list **stack_a, t_list **stack_b, t_vars *vars)
 	ft_rotate_b(stack_b, vars, (*stack_a)->num);
 }
 
+// main function for sorting stack a to stack b
+// calls all forward algo functions
 void	ft_sort_forward(t_list **stack_a, t_list **stack_b, t_vars *vars)
 {
 	while (vars->len_a > 3 && vars->len_b < 2)

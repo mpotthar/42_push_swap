@@ -6,12 +6,13 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:00:00 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/04/17 13:09:15 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/04/21 10:05:50 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// count rotations needed to rotate stack a to num
 int	ft_cnt_ops_in_a(t_list **stack_a, t_vars *vars, int num)
 {
 	int		cnt;
@@ -34,6 +35,7 @@ int	ft_cnt_ops_in_a(t_list **stack_a, t_vars *vars, int num)
 	return (1);
 }
 
+// count rotations of stack b needed to insert num
 int	ft_cnt_ops_in_b(t_list **stack_b, t_vars *vars, int num_a)
 {
 	int		cnt;
@@ -61,6 +63,7 @@ int	ft_cnt_ops_in_b(t_list **stack_b, t_vars *vars, int num_a)
 	return (0);
 }
 
+// calculate shortest path to rotate (ra or rra)
 void	ft_rotate_a(t_list **stack_a, t_vars *vars, int num_a)
 {
 	int		cnt;
@@ -85,6 +88,7 @@ void	ft_rotate_a(t_list **stack_a, t_vars *vars, int num_a)
 	}
 }
 
+// rotates stack b to insert new min or max
 static void	ft_rotate_min_max(t_list **stack_b, t_vars *vars, int cnt)
 {
 	if (vars->len_b - cnt > cnt)
@@ -98,6 +102,7 @@ static void	ft_rotate_min_max(t_list **stack_b, t_vars *vars, int cnt)
 	}
 }
 
+// rotates stack b to insert num
 void	ft_rotate_b(t_list **stack_b, t_vars *vars, int num_a)
 {
 	int		cnt;
