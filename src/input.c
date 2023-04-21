@@ -6,7 +6,7 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:00:00 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/04/21 09:22:30 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:12:15 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,11 @@ static t_list	*ft_get_num(t_list **stack_a, char **numbers, int i)
 		|| ft_check_double_occurrence(*stack_a, (int) num) == false)
 		return (NULL);
 	tmp = ft_lstnew((int)num);
-	if (!tmp)
-	{
-		ft_lstclear(stack_a);
-		return (NULL);
-	}
 	return (tmp);
 }
 
 // reads the input and appends it to the stack
+// i start index of the array of **numbers
 t_bool	ft_read_input(t_list **stack_a, char **numbers, int i)
 {
 	long int	num;

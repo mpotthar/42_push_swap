@@ -6,7 +6,7 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 00:00:00 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/04/17 13:29:38 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:34:23 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,10 @@ int	main(int argc, char **argv)
 	}
 	vars = (t_vars *)ft_calloc(1, sizeof(t_vars));
 	if (!vars)
+	{
+		ft_lstclear(&stack_a);
 		return (1);
+	}
 	ft_push_swap(&stack_a, &stack_b, vars);
 	return (0);
 }
